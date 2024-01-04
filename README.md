@@ -12,7 +12,7 @@ Please cite our paper if you find it useful. <br>
 ```
 
 <p align="center">
-<img src="coverPic.png" width="720">
+<img src="coverPic.jpg" width="720">
 </p>
 
 ### Using the code 

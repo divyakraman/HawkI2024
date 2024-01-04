@@ -29,7 +29,7 @@ from transformers import (
 
 image_processor = AutoImageProcessor.from_pretrained("facebook/dinov2-base", cache_dir = './huggingface_models/')
 dino_model = Dinov2Model.from_pretrained("facebook/dinov2-base", cache_dir = './huggingface_models/').cuda()
-sscd_model = torch.jit.load("./pretrained_models/sscd_disc_mixup.torchscript.pt").cuda()
+sscd_model = torch.jit.load("./pretrained_models/sscd_disc_mixup.torchscript.pt").cuda() # Download pretrained model from https://github.com/facebookresearch/sscd-copy-detection
 clip_model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32", cache_dir = './huggingface_models/').cuda()
 clip_processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32", cache_dir = './huggingface_models/')
 

@@ -1,4 +1,4 @@
-Paper: [**AerialBooth: Mutual Information Guidance for Text Controlled Aerial View Synthesis from a Single Image**]([https://arxiv.org/abs/2303.11444](https://arxiv.org/abs/2311.15478)) (arXiv November 2023)
+Paper: [**AerialBooth: Mutual Information Guidance for Text Controlled Aerial View Synthesis from a Single Image**](https://arxiv.org/abs/2311.15478) (arXiv November 2023)
 
 Please cite our paper if you find it useful. <br>
 
@@ -22,10 +22,10 @@ Please cite our paper if you find it useful. <br>
 &nbsp;&nbsp;models/aerialbooth - Model definition for AerialBooth <br>
 &nbsp;&nbsp;models/aerialbooth_viewarg - Provides support for generating any arbitrary text-controlled view <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;models/mutual_information - functions for computation of mutual information and earthmovers' distance <br>
-&nbsp;&nbsp;models/aerialdiffusion_lora - Model definition for Aerial Diffusion LoRA <br>
-&nbsp;&nbsp;models/dreambooth_lora - Model definition for DreamBooth LoRA <br>
-&nbsp;&nbsp;models/imagic - Model definition for Imagic LoRA <br>
-**Training scripts**: 
+&nbsp;&nbsp;models/aerialdiffusion_lora - Model definition for [Aerial Diffusion](https://arxiv.org/abs/2303.11444) LoRA <br>
+&nbsp;&nbsp;models/dreambooth_lora - Model definition for [DreamBooth](https://dreambooth.github.io/) LoRA <br>
+&nbsp;&nbsp;models/imagic - Model definition for [Imagic](https://imagic-editing.github.io/) LoRA <br>
+**Training scripts**: <br>
 &nbsp;&nbsp;Use train_aerialbooth_batch.py to perform optimization and generate the aerial-view image of a given input image. <br>
 &nbsp;&nbsp;Use train_aerialbooth_view.py to perform optimization and generate the arbitrary text-controlled views of a given input image. <br>
 **Computing the quantitative metrics**: <br>

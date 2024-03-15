@@ -1,4 +1,4 @@
-Paper: [**AerialBooth: Mutual Information Guidance for Text Controlled Aerial View Synthesis from a Single Image**](https://arxiv.org/abs/2311.15478) (arXiv November 2023)
+Paper: [**HawkI: Homography & Mutual Information Guidance for 3D-free Single Image to Aerial View**](https://arxiv.org/abs/2311.15478) (arXiv March 2024)
 
 Please cite our paper if you find it useful. <br>
 

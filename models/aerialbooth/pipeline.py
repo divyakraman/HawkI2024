@@ -13,12 +13,12 @@ import torch.nn.functional as F
 from accelerate import Accelerator
 import torch.fft as fft
 
+from torch.autograd import Variable
+
 # TODO: remove and import from diffusers.utils when the new version of diffusers is released
 from packaging import version
 from tqdm.auto import tqdm
 from transformers import CLIPFeatureExtractor, CLIPTextModel, CLIPTokenizer
-
-from torch.autograd import Variable
 
 from diffusers import DiffusionPipeline
 from diffusers.models import AutoencoderKL, UNet2DConditionModel
@@ -33,7 +33,7 @@ from models.mutual_information.mutualinformation import *
 from typing import Dict
 from diffusers.loaders import (
     LoraLoaderMixin,
-    #text_encoder_lora_state_dict,
+#    text_encoder_lora_state_dict,
 )
 from diffusers.models.attention_processor import (
     AttnAddedKVProcessor,
@@ -482,6 +482,7 @@ class ImagicStableDiffusionPipeline(DiffusionPipeline):
         return_dict: bool = True,
         guidance_scale: float = 7.5,
         eta: float = 0.0,
+        mi_lr: float = 1e-5, 
         **kwargs,
     ):
         
@@ -585,7 +586,7 @@ class ImagicStableDiffusionPipeline(DiffusionPipeline):
                 latents.requires_grad_(True)
                 optimizer = torch.optim.Adam(
                     [latents],  # only optimize the embeddings
-                    lr=1e-6,
+                    lr=mi_lr,
                 )
                 mi_score = 0 
                 for c in range(C):
@@ -596,8 +597,7 @@ class ImagicStableDiffusionPipeline(DiffusionPipeline):
                 mi_score.backward()
                 optimizer.step()
                 optimizer.zero_grad()
-                latents.requires_grad_(False)
-                
+                latents.requires_grad_(False)   
             
 
         latents = 1 / 0.18215 * latents
